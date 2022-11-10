@@ -8,7 +8,7 @@ It supports Cross-Domain. Any domain with correct setup can interact with this s
 
 - [Cloudflare Page (default)](https://midman.pages.dev/)
 - [Netlify Edge](https://middyman.netlify.app/)
-
+ 
 ---
 
 ## Project Structure
