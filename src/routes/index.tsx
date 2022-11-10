@@ -23,12 +23,22 @@ export default component$(() => {
 
 			<table class="commands">
 				<tr>
-					<td>Using Cloudflare Page</td>
+					<td>Using Cloudflare Pages</td>
 					<td>
 						<RedirectLink
 							link="https://midman.pages.dev/redirect"
 							redirectLink="https://bangumi.moe/"
 							text="Link to Bangumi"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td>Using Vercel</td>
+					<td>
+						<RedirectLink
+							link="https://midman.vercel.app/redirect"
+							redirectLink="https://custom-roms.com/"
+							text="Link to CustomRoms"
 						/>
 					</td>
 				</tr>

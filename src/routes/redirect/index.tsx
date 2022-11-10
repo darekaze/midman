@@ -1,6 +1,10 @@
 import {component$, $, useOnWindow, useStore} from '@builder.io/qwik'
 import type {DocumentHead} from '@builder.io/qwik-city'
 
+/**
+ * Redirector page of the website
+ * Do some fancy stuff while redirecting the user to the desire page
+ */
 export default component$(() => {
 	const store = useStore({redirectLink: ''})
 
