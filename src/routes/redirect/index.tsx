@@ -1,5 +1,6 @@
 import {component$, $, useOnWindow, useStore} from '@builder.io/qwik'
 import type {DocumentHead} from '@builder.io/qwik-city'
+import {useBlockDetector} from '~/hooks/useBlockDetector'
 
 /**
  * Redirector page of the website
@@ -7,6 +8,7 @@ import type {DocumentHead} from '@builder.io/qwik-city'
  */
 export default component$(() => {
 	const store = useStore({redirectLink: ''})
+	const block = useBlockDetector()
 
 	useOnWindow(
 		'message',
@@ -30,8 +32,9 @@ export default component$(() => {
 			<h1>
 				<span class="lightning">⚡️</span> MidMan Redirector
 			</h1>
-
 			<p>Welp, It's still quite empty here, but we will add more things here later 😉</p>
+
+			{block.present && <p>** What a Shame. Disable your AdBlock la :/ **</p>}
 
 			{/* LATER: you can put anything you want here */}
 
