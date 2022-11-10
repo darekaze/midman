@@ -1,13 +1,12 @@
-# Qwik App ⚡️
+# MidMan Redirector ⚡️
+
+A simple redirector for sensitive contents using `postMessage` API.
+
+## Stack
 
 - [Qwik Docs](https://qwik.builder.io/)
-- [Discord](https://qwik.builder.io/chat)
-- [Qwik GitHub](https://github.com/BuilderIO/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
 - [Vite](https://vitejs.dev/)
 - [Partytown](https://partytown.builder.io/)
-- [Mitosis](https://github.com/BuilderIO/mitosis)
-- [Builder.io](https://www.builder.io/)
 
 ---
 
