@@ -5,5 +5,5 @@
 	"start_url": ".",
 	"display": "standalone",
 	"background_color": "#fff",
-	"description": "An app made with Qwik for passing redirects."
+	"description": "MidMan is a website made with Qwik to handle sensitive redirects."
 }

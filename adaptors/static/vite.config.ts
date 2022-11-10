@@ -12,7 +12,10 @@ export default extendConfig(baseConfig, () => {
 		},
 		plugins: [
 			staticAdaptor({
-				origin: process.env.ORIGIN as string,
+				origin: (process.env.URL ||
+					process.env.VERCEL_URL ||
+					process.env.CF_PAGES_URL ||
+					process.env.DEPLOY_PRIME_URL) as string,
 			}),
 		],
 	}
