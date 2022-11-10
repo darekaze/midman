@@ -1,139 +1,63 @@
-import { component$ } from '@builder.io/qwik';
-import type { DocumentHead } from '@builder.io/qwik-city';
-import { Link } from '@builder.io/qwik-city';
+import {component$} from '@builder.io/qwik'
+import type {DocumentHead} from '@builder.io/qwik-city'
+import {RedirectLink} from '~/components/redirect-link'
 
+/**
+ * Homepage of the website
+ * Show introduction and demo for redirecting
+ */
 export default component$(() => {
-  return (
-    <div>
-      <h1>
-        Welcome to Qwik <span class="lightning">⚡️</span>
-      </h1>
+	return (
+		<div>
+			<h1>
+				Welcome to MidMan <span class="lightning">⚡️</span>
+			</h1>
 
-      <ul>
-        <li>
-          Check out the <code>src/routes</code> directory to get started.
-        </li>
-        <li>
-          Add integrations with <code>npm run qwik add</code>.
-        </li>
-        <li>
-          More info about development in <code>README.md</code>
-        </li>
-      </ul>
+			<ul>
+				<li>This site acts as a middleman for passing sensitive URLs.</li>
+				<li>Support any domains. No fancy stuff behind.</li>
+				<li>More features to be added. (e.g. Anti Adblock)</li>
+			</ul>
 
-      <h2>Commands</h2>
+			<h2>Demo Links</h2>
 
-      <table class="commands">
-        <tr>
-          <td>
-            <code>npm run dev</code>
-          </td>
-          <td>Start the dev server and watch for changes.</td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run preview</code>
-          </td>
-          <td>Production build and start preview server.</td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run build</code>
-          </td>
-          <td>Production build.</td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add</code>
-          </td>
-          <td>Select an integration to add.</td>
-        </tr>
-      </table>
-
-      <h2>Add Integrations</h2>
-
-      <table class="commands">
-        <tr>
-          <td>
-            <code>npm run qwik add cloudflare-pages</code>
-          </td>
-          <td>
-            <a href="https://developers.cloudflare.com/pages" target="_blank">
-              Cloudflare Pages Server
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add express</code>
-          </td>
-          <td>
-            <a href="https://expressjs.com/" target="_blank">
-              Nodejs Express Server
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add netlify-edge</code>
-          </td>
-          <td>
-            <a href="https://docs.netlify.com/" target="_blank">
-              Netlify Edge Functions
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add static-node</code>
-          </td>
-          <td>
-            <a
-              href="https://qwik.builder.io/qwikcity/static-site-generation/overview/"
-              target="_blank"
-            >
-              Static Site Generation (SSG)
-            </a>
-          </td>
-        </tr>
-      </table>
-
-      <h2>Community</h2>
-
-      <ul>
-        <li>
-          <span>Questions or just want to say hi? </span>
-          <a href="https://qwik.builder.io/chat" target="_blank">
-            Chat on discord!
-          </a>
-        </li>
-        <li>
-          <span>Follow </span>
-          <a href="https://twitter.com/QwikDev" target="_blank">
-            @QwikDev
-          </a>
-          <span> on Twitter</span>
-        </li>
-        <li>
-          <span>Open issues and contribute on </span>
-          <a href="https://github.com/BuilderIO/qwik" target="_blank">
-            GitHub
-          </a>
-        </li>
-        <li>
-          <span>Watch </span>
-          <a href="https://qwik.builder.io/media/" target="_blank">
-            Presentations, Podcasts, Videos, etc.
-          </a>
-        </li>
-      </ul>
-      <Link class="mindblow" href="/flower">
-        Blow my mind 🤯
-      </Link>
-    </div>
-  );
-});
+			<table class="commands">
+				<tr>
+					<td>Using Vercel</td>
+					<td>
+						<RedirectLink
+							link="https://midman.vercel.app/redirect"
+							redirectLink="https://bangumi.moe/"
+							text="Link to Bangumi"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td>Using Netlify</td>
+					<td>
+						<RedirectLink
+							link="https://midman.vercel.app/redirect"
+							redirectLink="https://nyaa.si/"
+							text="Link to Nyaa"
+						/>
+					</td>
+				</tr>
+				<tr>
+					<td>Same Origin (testing only)</td>
+					<td>
+						<RedirectLink
+							isSameOrigin
+							link="/redirect"
+							redirectLink="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+							text="Link to somewhere..."
+						/>
+					</td>
+				</tr>
+			</table>
+		</div>
+	)
+})
 
 export const head: DocumentHead = {
-  title: 'Welcome to Qwik',
-};
+	title: 'Home',
+}
