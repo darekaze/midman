@@ -36,11 +36,7 @@ export default component$(() => {
 			{/* LATER: you can put anything you want here */}
 
 			{store.redirectLink ? (
-				<a
-					class="mindblow"
-					href={store.redirectLink}
-					target="_blank"
-					rel="nofollow noopener noreferrer">
+				<a class="mindblow" href={store.redirectLink} rel="nofollow noopener noreferrer">
 					Go to link bruh
 				</a>
 			) : (
