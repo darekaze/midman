@@ -7,6 +7,7 @@ It supports Cross-Domain. Any domain with correct setup can interact with this s
 ## Deployment
 
 - [Cloudflare Page (default)](https://midman.pages.dev/)
+- [Vercel](https://midman.vercel.app/)
 - [Netlify Edge](https://middyman.netlify.app/)
 
 ---
