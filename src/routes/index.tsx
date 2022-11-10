@@ -23,10 +23,10 @@ export default component$(() => {
 
 			<table class="commands">
 				<tr>
-					<td>Using Vercel</td>
+					<td>Using Cloudflare Page</td>
 					<td>
 						<RedirectLink
-							link="https://midman.vercel.app/redirect"
+							link="https://midman.pages.dev/redirect"
 							redirectLink="https://bangumi.moe/"
 							text="Link to Bangumi"
 						/>
@@ -36,7 +36,7 @@ export default component$(() => {
 					<td>Using Netlify</td>
 					<td>
 						<RedirectLink
-							link="https://midman.vercel.app/redirect"
+							link="https://midman.netlify.app/redirect"
 							redirectLink="https://nyaa.si/"
 							text="Link to Nyaa"
 						/>
