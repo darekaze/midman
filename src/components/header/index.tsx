@@ -1,9 +1,9 @@
 import {component$, useStylesScoped$} from '@builder.io/qwik'
 import {Link} from '@builder.io/qwik-city'
 import {MainLogo} from '../icons/main'
-import styles from './header.css?inline'
+import styles from './style.css?inline'
 
-export default component$(() => {
+export const Header = component$(() => {
 	useStylesScoped$(styles)
 
 	return (
