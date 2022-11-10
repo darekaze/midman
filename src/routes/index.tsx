@@ -36,7 +36,7 @@ export default component$(() => {
 					<td>Using Netlify</td>
 					<td>
 						<RedirectLink
-							link="https://midman.netlify.app/redirect"
+							link="https://middyman.netlify.app/redirect"
 							redirectLink="https://nyaa.si/"
 							text="Link to Nyaa"
 						/>
