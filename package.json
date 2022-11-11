@@ -19,6 +19,9 @@
 		"start": "vite --open --mode ssr",
 		"qwik": "qwik"
 	},
+	"dependencies": {
+		"js-base64": "^3.7.2"
+	},
 	"devDependencies": {
 		"@builder.io/qwik": "0.12.1",
 		"@builder.io/qwik-city": "0.0.118",

@@ -1,24 +1,28 @@
 import {component$, $} from '@builder.io/qwik'
+import {encode} from 'js-base64'
 
 type Props = {
 	link: string
 	redirectLink: string
 	isSameOrigin?: boolean
 	text?: string
+	encodeBase64?: boolean
 }
 
 /**
  * Redirect Link for open a popup and redirect
+ * Base64 encoding is also support
  */
 export const RedirectLink = component$<Props>(
-	({link, redirectLink, text = 'Open Link', isSameOrigin = false}) => {
+	({link, redirectLink, text = 'Open Link', encodeBase64 = true, isSameOrigin = false}) => {
 		const onClick = $(() => {
+			const data = encodeBase64 ? encode(redirectLink) : redirectLink
 			const target = isSameOrigin ? window.location.origin + link : link
 			const x = window.open(target)
 
 			// Delay is needed to send message
 			setTimeout(() => {
-				x?.postMessage(redirectLink, target)
+				x?.postMessage(data, target)
 			}, 2000)
 		})
 

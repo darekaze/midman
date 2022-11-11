@@ -1,31 +1,17 @@
-import {component$, $, useOnWindow, useStore} from '@builder.io/qwik'
+import {component$} from '@builder.io/qwik'
 import type {DocumentHead} from '@builder.io/qwik-city'
+import {useRedirectMsgHandler} from '~/hooks/useRedirectMsgHandler'
 import {useBlockDetector} from '~/hooks/useBlockDetector'
+
+// BETTER: show random gif?
 
 /**
  * Redirector page of the website
  * Do some fancy stuff while redirecting the user to the desire page
  */
 export default component$(() => {
-	const store = useStore({redirectLink: ''})
 	const block = useBlockDetector()
-
-	useOnWindow(
-		'message',
-		$((event) => {
-			try {
-				const origin = (event as MessageEvent).origin
-				const referer = new URL(document.referrer)
-
-				if (origin !== referer.origin) return
-
-				const link = new URL((event as MessageEvent).data)
-				store.redirectLink = link.href
-			} catch {
-				console.warn('Invalid link:', (event as MessageEvent).data)
-			}
-		}),
-	)
+	const handler = useRedirectMsgHandler()
 
 	return (
 		<div>
@@ -38,8 +24,8 @@ export default component$(() => {
 
 			{/* LATER: you can put anything you want here */}
 
-			{store.redirectLink ? (
-				<a class="mindblow" href={store.redirectLink} rel="nofollow noopener noreferrer">
+			{handler.redirectLink ? (
+				<a class="mindblow" href={handler.redirectLink} rel="nofollow noopener noreferrer">
 					Go to link bruh
 				</a>
 			) : (
