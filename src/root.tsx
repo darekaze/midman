@@ -24,7 +24,7 @@ export default component$(() => {
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 				{/* For adblock */}
-				<script src="/banger.js" type="text/javascript" />
+				<script src="/cnads.js" type="text/javascript" />
 			</body>
 		</QwikCity>
 	)
