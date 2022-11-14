@@ -2,7 +2,11 @@
 
 A simple redirector for sensitive contents using `postMessage` API.
 
-It supports Cross-Domain. Any domain with correct setup can interact with this site.
+Currently it has the following features:
+
+- [x] Supports Cross-Domain. Any domain with correct setup can interact with this site.
+- [x] Supports Base64 encoding and decoding for redirect link. 
+- [ ] Generate redirector template (WiP, currently we only provide direct examples)
 
 ## Deployment
 
