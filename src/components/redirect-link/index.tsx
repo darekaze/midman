@@ -1,5 +1,6 @@
 import {component$, $} from '@builder.io/qwik'
 import {encode} from 'js-base64'
+import {setCountInterval} from '~/utils/interval'
 
 type Props = {
 	link: string
@@ -21,9 +22,13 @@ export const RedirectLink = component$<Props>(
 			const x = window.open(target)
 
 			// Delay is needed to send message
-			setTimeout(() => {
-				x?.postMessage(data, target)
-			}, 2000)
+			setCountInterval(
+				() => {
+					x?.postMessage(data, target)
+				},
+				2000,
+				3,
+			)
 		})
 
 		return (
